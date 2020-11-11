@@ -36,8 +36,8 @@ def topology():
     ap1 = net.addAccessPoint('ap1', ssid='new-ssid', mode='g',
                              channel='1', position='10,10,0',
                              failMode="standalone")
-    net.addStation('sta1', position='10,20,0')
-    net.addStation('sta2', position='10,30,0')
+    sta1 = net.addStation('sta1', position='10,20,0')
+    sta2 = net.addStation('sta2', position='10,30,0')
 
     info("*** Configuring wifi nodes\n")
     net.configureWifiNodes()
