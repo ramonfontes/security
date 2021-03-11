@@ -9,6 +9,7 @@ tags: security-tutorials
 
 **Requirements:** 
 - Mininet-WiFi - https://github.com/intrig-unicamp/mininet-wifi
+- bridge-utils
 
 
 Network topology:
