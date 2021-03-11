@@ -157,7 +157,7 @@ mininet-wifi> h2 ping -c2 h8
 
 
 ## Troubleshooting
-The expected commands and results after running the greTunnel.py code are depicted below (you have to modify setLogLevel('info') to setLogLevel('debug') - only use this troubleshooting step if you have problems with the ping command):
+The expected commands and results after running the `greTunnel.py` code are depicted below (you have to modify setLogLevel('info') to setLogLevel('debug') - only use this troubleshooting step if you have problems with the _ping_ command):
 
 ```
 *** errRun: ['grep', '-c', 'processor', '/proc/cpuinfo'] 
