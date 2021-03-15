@@ -153,7 +153,7 @@ mininet-wifi> h2 ping -c2 h8
 **Questions**:
 
 01. What is the routing table of h2 and h8? Use the appropriated network commands and provide the outcome.
-02. Through the analysis of the packets that cross h9 and h10, how many IP packets can you observe from each packet? Please explaing your answer based on how the GRE tunnel works.
+02. Through the analysis of the packets that cross h9 and h10, how many IP headers can you observe from each packet? Please explaing your answer based on how the GRE tunnel works.
 
 
 
