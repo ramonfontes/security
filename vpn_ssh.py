@@ -1,9 +1,19 @@
-#!/usr/bin/python
-# codigo 4.5
+---
+tags: security-tutorials
+---
 
-'''@author: Ramon Fontes
-   @email: ramon.fontes@imd.ufrn.br
+# VPN/SSH
 
+**In this short demo you will:** 
+- How to run a simple VPN network topology
+- How to run a simple SSH network topology
+
+**Requirements:** 
+- Mininet-WiFi - https://github.com/intrig-unicamp/mininet-wifi
+
+
+Network topology:
+```
                                                                srv1
                                                            (10.200.0.2)
                                                                 /
@@ -13,6 +23,15 @@ client (10.201.0.1) - s1 - (10.201.0.100) r1 (10.200.0.100) - s2 - vpn (10.200.0
                                                                 \
                                                            (10.200.0.3)
                                                                 srv2
+```     
+
+The script below produces the network topology illustrated above.
+
+```python=
+#!/usr/bin/python
+
+'''@author: Ramon Fontes
+   @email: ramon.fontes@imd.ufrn.br
 '''
 
 import os
@@ -97,3 +116,23 @@ def topology():
 if __name__ == '__main__':
     setLogLevel('info')
     topology()
+```
+
+You can run the code with the command below (considering that the filename is ipsec.py)
+```
+sudo python ipsec.py [-ESPTR,AHTR,ESPTU,AHTU]
+```
+
+Then, you can run Wireshark on s1-eth1
+
+```
+mininet-wifi> xterm s1
+s1# wireshark s1-eth1
+```
+
+And you can try to communicate h1 and h2 as follows:
+
+```
+mininet-wifi> h2 ping -c2 h3
+```
+
