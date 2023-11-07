@@ -118,21 +118,8 @@ if __name__ == '__main__':
     topology()
 ```
 
-You can run the code with the command below (considering that the filename is ipsec.py)
+You can run the code with the command below (considering that the filename is vpn-ssh.py)
 ```
-sudo python ipsec.py [-ESPTR,AHTR,ESPTU,AHTU]
-```
-
-Then, you can run Wireshark on s1-eth1
-
-```
-mininet-wifi> xterm s1
-s1# wireshark s1-eth1
-```
-
-And you can try to communicate h1 and h2 as follows:
-
-```
-mininet-wifi> h2 ping -c2 h3
+sudo python vpn-ssy.py
 ```
 
