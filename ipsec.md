@@ -13,8 +13,9 @@ tags: security-tutorials
 
 Network topology:
 ```
-              10.0.0.1                             10.0.0.2           
-              h1 (h1-eth0) ----------------------- (h2-eth0) h2
+h1 - \                               / - h3 
+       s2 --- r1 --- s1 --- r2 --- s3
+h2 - /                               \ - h4
 ```     
 
 The script below produces the network topology illustrated above.
@@ -164,7 +165,7 @@ if __name__ == '__main__':
 
 You can run the code with the command below (considering that the filename is ipsec.py)
 ```
-sudo python ipsec.py [-ESPTR,AHTR,ESPTU,AHTU]
+sudo python ipsec.py [-ESPTR,AHTR,ESPTU,AHTU,AHESTR,AHESTU]
 ```
 
 Then, you can run Wireshark on s1-eth1
