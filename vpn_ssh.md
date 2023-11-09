@@ -5,11 +5,11 @@ tags: security-tutorials
 # VPN/SSH
 
 **In this short demo you will:** 
-- How to run a simple VPN network topology
 - How to run a simple SSH network topology
+- How to run a simple VPN network topology
 
 **Requirements:** 
-- Mininet-WiFi - https://github.com/intrig-unicamp/mininet-wifi
+- Containernet - https://github.com/ramonfontes/containernet
 
 
 Network topology:
