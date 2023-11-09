@@ -178,5 +178,5 @@ s1# wireshark s1-eth1
 And you can try to communicate h1 and h2 as follows:
 
 ```
-mininet-wifi> h2 ping -c2 h3
+mininet-wifi> h1 ping -c1 h3
 ```
