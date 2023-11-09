@@ -45,9 +45,9 @@ from mininet.log import info, setLogLevel
 
 def topology():
     "Create a network."
+    DISPLAY_ID = 1
     net = Containernet(ipBase='10.200.0.0/24')
 
-    DISPLAY_ID = 1
     os.system('sudo xhost +local:docker')
     os.system('export DISPLAY=:{}'.format(DISPLAY_ID))
 
@@ -92,12 +92,9 @@ def topology():
     r1.cmd('ifconfig r1-eth1 10.200.0.100/24')
 
     r1.cmd('iptables -F')
-    r1.cmd('iptables -A INPUT -j ACCEPT')
-    r1.cmd('iptables -A OUTPUT -j ACCEPT')
+    r1.cmd('iptables -A FORWARD -j ACCEPT')
     r1.cmd('iptables -A FORWARD -p tcp --dport 22 -j ACCEPT')
-    r1.cmd('iptables -A FORWARD -p tcp --sport 22 -j ACCEPT')
-    r1.cmd('iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT')
-    r1.cmd('iptables -A OUTPUT -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT')
+    r1.cmd('iptables -A FORWARD -p tcp --sport 22 -m state --state ESTABLISHED,RELATED -j ACCEPT')
     r1.cmd('iptables -t nat -A PREROUTING -p tcp --dport 22 -j DNAT --to 10.200.0.1:22')
     r1.cmd('iptables -P INPUT DROP')
     r1.cmd('iptables -P OUTPUT DROP')
