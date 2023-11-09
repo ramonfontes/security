@@ -2,7 +2,7 @@
 tags: security-tutorials
 ---
 
-# VPN/SSH
+# SSH/VPN
 
 **In this short demo you will:** 
 - How to run a simple SSH network topology
